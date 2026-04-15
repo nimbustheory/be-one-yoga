@@ -220,14 +220,14 @@ function PageHero({ image, title, subtitle, fallbackGradient }) {
   return (
     <div style={{ position: "relative", minHeight: 240, overflow: "hidden" }}>
       {image && !imgFailed ? (
-        <img src={image} alt="" loading="lazy" onError={() => setImgFailed(true)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.7)" }} />
+        <img src={image} alt="" loading="lazy" onError={() => setImgFailed(true)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.85)" }} />
       ) : (
         <div style={{ position: "absolute", inset: 0, background: gradient }} />
       )}
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,.45) 0%, rgba(0,0,0,.05) 50%, rgba(0,0,0,.15) 100%)" }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,.32) 0%, rgba(0,0,0,.03) 50%, rgba(0,0,0,.10) 100%)" }} />
       <div style={{ position: "relative", padding: "80px 20px 24px", display: "flex", flexDirection: "column", justifyContent: "flex-end", minHeight: 240 }}>
         <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 34, fontWeight: 600, color: "#fff", margin: 0, lineHeight: 1.1 }}>{title}</h1>
-        {subtitle && <p style={{ fontSize: 13, color: "rgba(255,255,255,.75)", margin: "6px 0 0", maxWidth: 280 }}>{subtitle}</p>}
+        {subtitle && <p style={{ fontSize: 13, color: "rgba(255,255,255,.75)", margin: "6px 0 0", maxWidth: 360 }}>{subtitle}</p>}
       </div>
     </div>
   );
@@ -360,7 +360,7 @@ function HomePage() {
 
   return (
     <div>
-      <PageHero image={STUDIO_IMAGES.home} title={<>{STUDIO_CONFIG.heroLine1}<br/><span style={{ color: T.accent, fontStyle: "italic" }}>{STUDIO_CONFIG.heroLine2}</span></>} subtitle={STUDIO_CONFIG.description} />
+      <PageHero image={STUDIO_IMAGES.home} title={<span style={{ fontSize: 56, lineHeight: 1.05 }}>{STUDIO_CONFIG.heroLine1}<br/><span style={{ color: T.accent, fontStyle: "italic" }}>{STUDIO_CONFIG.heroLine2}</span></span>} subtitle={STUDIO_CONFIG.description} />
 
       <section style={{ padding: "20px 16px 0", position: "relative", zIndex: 10 }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8 }}>
